@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Valley - Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="create-server"></div>
+    <div class="server-info"></div>
+    <div class="popup-container menu-container" onclick="closePopup(this)">
+        <div class="menu">
+            <span onclick="openDashboard()">Dashboard</span>
+            <span onclick="openServers()">Servers</span>
+            <div onclick="openSettings()" class="settings-button"></div>
+        </div>
+    </div>
+    
+    <header>
+        <div class="menu-button" onclick="openMenu()"></div>
+        <div class="title-box">
+            <h1 class="title">Block Valley - Manager</h1>
+            <h1>Dashboard</h1>
+        </div>
+    </header>
+    <main>
+        <div class="dashboard">
+            <div class="latest-server">
+                <span>Latest server:</span>
+                <div>Server</div>
+            </div>
+            <div class="standard-dir">
+                <span>Standard dir:</span>
+                <br>
+                <span>C:/</span>
+            </div>
+            <div class="memory">
+                <span>Memory used:</span>
+                <br>
+                <span>1GB</span>
+            </div>
+            <img src="" alt="Block Valley World">
+            <span class="credit">github.com/dedouwe26/blockvalley-manager</span>
+            <div class="updates">
+                <span>Updates:</span>
+                <div>Check</div>
+            </div>
+        </div>
+        <div class="servers">
+            <div class="add-server"><span>+</span></div>
+            <div class="grid">
+                <div class="server">
+                    <span class="s-name">Name</span>
+                    <br>
+                    <span class="s-owner">Owner: Name</span>
+                    <br>
+                    <div class="s-icons"><div class="s-icon">.</div><div class="s-icon">.</div><div class="s-icon">.</div><div class="s-icon">.</div><div class="s-icon">.</div></div>
+                </div>
+            </div>
+            
+            
+
+        </div>
+    </main>
+</body>
+</html>

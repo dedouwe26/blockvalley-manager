@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
+}
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:90px;
+    background-color: rgb(240, 240, 240);
+}
+header h1 {
+    font-size: 35px;
+    margin: 0;
+    padding:0 20px 0 20px;
+    float: left;
+}
+.title-box  {
+    width: max-content;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.title {
+    border-right: 2px black solid;
+}
+.menu-button {
+    margin-left: 10px;
+    margin-top:2px;
+    margin-right: 20px;
+    float:left;
+    width: 50px;
+    height: 50px;
+    background-image: url(menu.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.settings-button {
+    position: absolute;
+    bottom: 90px;
+    background-image: url(settings.png);
+    background-size: 100% 100%;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+.popup-container {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(110, 110, 110, 0.664);
+}
+.menu {
+    background-color: rgb(230, 230, 230);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width:150px;
+}
+.menu span {
+    font-size: 30px;
+    cursor: pointer;
+    border-bottom: 2px black solid;
+    padding: 20px 0 20px 0;
+}
+main {
+    position: absolute;
+    top:90px;
+    left:0;
+}
+.dashboard {
+    width: 100%;
+    height: 610px;
+}
+.dashboard div {
+    width: max-content;
+    position: absolute;
+}
+.credit {
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 545px;
+}
+.dashboard div span {
+    font-size: 27px;
+}
+.dashboard div div {
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 4px 4px 4px 4px;
+    background-color: lime;
+    box-shadow: 0px 0px 20px 6px lime;
+    cursor: pointer;
+}
+.dashboard div div:hover {
+    background-color: limegreen;
+    box-shadow: 0px 0px 20px 3px limegreen;
+}
+.latest-server {
+    left: 30px;
+    top: 30px;
+}
+.standard-dir {
+    left: 520px;
+    top: 35px;
+}
+.memory {
+    left: 750px;
+    top: 35px;
+}
+.updates {
+    left: 750px;
+    top: 80%;
+}
+.dashboard img {
+    position: absolute;
+    top: 200px;
+    left:50px;
+}
+.servers {
+    width: 1000px;
+    height: 610px;
+    display: none;
+}
+.grid {
+    margin-left: 20px;
+    margin-top: 40px;
+    display:grid;
+    position: absolute;
+    left: 0;
+    top: 0;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: auto;
+    gap: 20px 20px;
+}
+.add-server {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    left: 900px;
+    top: 20px;
+    height: 45px;
+    width: 45px;
+    font-size: 40px;
+    border-radius: 50%;
+    background-color: limegreen;
+    box-shadow: 0px 0px 20px 6px limegreen;
+    cursor: pointer;
+}
+.add-server:hover {
+    background-color: #30c230;
+    box-shadow: 0px 0px 20px 3px #30c230;
+}
+.server {
+    border-radius: 12px;
+    box-shadow: 10px 10px 15px 1px #808080;
+    background-color: #f7f7f7;
+    width: 200px;
+    height: 80px;
+}
+.server .s-name {
+    font-size: 25px;
+}
+.server .s-owner {
+    font-size: 15px;
+}
+.server .s-icons {
+    margin-left: 10px;
+    float: left;
+}
+.server .s-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 20px;
+    float: left;
+    font-size: 20px;
+}

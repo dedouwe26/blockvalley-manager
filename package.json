@@ -1,0 +1,22 @@
+{
+  "name": "blockvalley-manager",
+  "version": "1.0.0",
+  "description": "The manager for the blockvalley-servers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dedouwe26/blockvalley-manager.git"
+  },
+  "author": "dedouwe26",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dedouwe26/blockvalley-manager/issues"
+  },
+  "homepage": "https://github.com/dedouwe26/blockvalley-manager#readme",
+  "dependencies": {
+    "electron": "^18.0.1"
+  }
+}
