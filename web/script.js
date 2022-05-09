@@ -3,10 +3,10 @@ window.onload = ()=>{
 }
 
 function openMenu () {
-    document.getElementsByClassName('menu-container')[0].style.display='block';
+    document.getElementById('menu-container').show();
 }
 function closePopup (el) {
-    el.style.display='none';
+    el.close();
 }
 function openDashboard () {
     document.getElementsByClassName('servers')[0].style.display='none';
