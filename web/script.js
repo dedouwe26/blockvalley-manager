@@ -1,5 +1,7 @@
-window.onload = ()=>{
+let standardDir = "C:/";
 
+window.onload = ()=>{
+    document.getElementsByClassName("standard-dir")[0].children[2].textContent = standardDir;
 }
 
 function openMenu () {
