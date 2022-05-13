@@ -1,0 +1,13 @@
+{
+      "s-dir":"dir",
+      "s-owner":"owner",
+      "servers":[
+          {
+              "name":"",
+              "dir":"",
+              "owner":"",
+              "custom":[0,5,3],
+              "eula":true 
+          }
+      ]
+}

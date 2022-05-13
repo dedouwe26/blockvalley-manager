@@ -1,6 +1,15 @@
-let standardDir = "C:/";
+const electron = require('electron');
+const ipc = electron.ipcRenderer;
 
+let standardDir = "C:/";
+let serverList = [];
+
+ipc.on("loadConfig",(e,config)=>{
+    
+});
 window.onload = ()=>{
+
+
     document.getElementsByClassName("standard-dir")[0].children[2].textContent = standardDir;
 }
 
