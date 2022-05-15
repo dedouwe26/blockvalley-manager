@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Block Valley - Manager</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
     <div class="create-server"></div>
-    <div class="server-info">
+    <dialog class="server-info popup-container" onclick="closePopup(this)">
         <span>Name</span>
         <span>owner</span>
         <div>
@@ -23,7 +23,7 @@
         <div></div>
         <div></div>
         <div></div>
-    </div>
+    </dialog>
     <dialog id="menu-container" class="popup-container" onclick="closePopup(this)">
         <div class="menu">
             <span onclick="openDashboard()">Dashboard</span>
@@ -49,7 +49,7 @@
             <div class="standard-dir">
                 <span>Standard dir:</span>
                 <br>
-                <span>C:/</span>
+                <span></span>
             </div>
             <div class="memory">
                 <span>Memory used:</span>

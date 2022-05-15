@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/dedouwe26/blockvalley-manager#readme",
   "dependencies": {
-    "electron": "^18.0.1"
+    "electron": "^18.2.3"
   }
 }

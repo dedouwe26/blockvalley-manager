@@ -1,18 +1,19 @@
-const {app, BrowserWindow} = require('electron');
-const ipc = require('electron').ipcMain;
+const {app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
+let mainWindow;
 
 function createWindow () {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     resizable: false,
     width: 1000,
     height: 700,
     frame: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration:true,
+      contextIsolation: false
     }
   })
 
@@ -28,14 +29,19 @@ function createWindow () {
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   createWindow()
-  fs.readFile("./config.json","utf-8",(err,data)=>{
-    if (err) {
-      if (err.code==='ENOENT') {
-        //fs.writeFile("./config.json",)
+  mainWindow.show();
+  mainWindow.webContents.on('did-finish-load', () => {
+    console.log("[IPC]: Main < Renderer: did-finish-load: ...")
+    fs.readFile("./config.json","utf-8",(err,data)=>{
+      if (err) {
+        if (err.code==='ENOENT') {
+          fs.writeFile("./config.json",'{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}',()=>{return;});
+        }
       }
-    }
-      ipc.emit("loadConfig",JSON.parse(data));
-  });
+      console.log("[IPC]: Main > Renderer: loadConfig: ",data)
+      mainWindow.webContents.send("loadConfig",JSON.parse(data));
+    });
+  })
 });
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
