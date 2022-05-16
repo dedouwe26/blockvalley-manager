@@ -1,20 +1,27 @@
 const electron = require("electron");
 const ipc = electron.ipcRenderer;
 
-let standardDir = "C:/";
+let standardDir = "";
 let standardOwner = "";
 let serverList = [];
+let memoryUsed = '';
 
-ipc.on("loadConfig",(e,config)=>{
+ipc.on("loadConfig",(e,json,memoryUsed)=>{
+    config = JSON.parse(json);
     console.log("[IPC]: Renderer < Main: loadConfig: ...")
     standardDir=config.sdir;
     standardOwner=config.sowner;
+    console.log(standardDir);
     serverList=config.servers
-    loadServers(serverList);
+    memoryUsed=this.memoryUsed;
+    load();
 });
-window.onload = ()=>{
+function load() {
     document.getElementsByClassName("standard-dir")[0].children[2].textContent = standardDir;
+    document.getElementsByClassName("memory")[0].children[2].textContent = memoryUsed;
+    loadServers();
 }
+
 function loadServers() {
     for (let index = 0; index < serverList.length; index++) {
         const server = serverList[index];
@@ -22,18 +29,21 @@ function loadServers() {
     }
 }
 function openServer(a) {
-    for (let index = 0; index < array.length; index++) {
+    for (let index = 0; index < serverList.length; index++) {
         const server = serverList[index];
         if (index===a) {
-            // open server screen
+            info=document.getElementsByClassName("server-info")[0]
+            for (let i = 0; i < server.custom.length; i++) {
+                const number = server.custom[i];
+                document.getElementsByClassName('i-icons-con')[0].children[number].classList.add('enabled');
+            }
+            
+            info.parentElement.show()
         }
     }
 }
 function openMenu () {
     document.getElementById('menu-container').show();
-}
-function closePopup (el) {
-    el.close();
 }
 function openDashboard () {
     document.getElementsByClassName('servers')[0].style.display='none';

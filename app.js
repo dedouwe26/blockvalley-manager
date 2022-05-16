@@ -31,15 +31,14 @@ app.whenReady().then(() => {
   createWindow()
   mainWindow.show();
   mainWindow.webContents.on('did-finish-load', () => {
-    console.log("[IPC]: Main < Renderer: did-finish-load: ...")
     fs.readFile("./config.json","utf-8",(err,data)=>{
       if (err) {
         if (err.code==='ENOENT') {
-          fs.writeFile("./config.json",'{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}',()=>{return;});
+          fs.writeFile("./config.json",'{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}',()=>{});
+          data='{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}';
         }
       }
-      console.log("[IPC]: Main > Renderer: loadConfig: ",data)
-      mainWindow.webContents.send("loadConfig",JSON.parse(data));
+      mainWindow.webContents.send("loadConfig",data);
     });
   })
 });

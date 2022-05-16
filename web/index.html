@@ -10,21 +10,32 @@
 </head>
 <body>
     <div class="create-server"></div>
-    <dialog class="server-info popup-container" onclick="closePopup(this)">
-        <span>Name</span>
-        <span>owner</span>
-        <div>
-            <span>Icons:</span>
+    <dialog class="popup-container" onclick="this.close()">
+        <div class="server-info">
+            <span class="i-name">Name</span>
+            <span class="i-owner">owner</span>
+            <div class="i-icons">
+                <span>Icons:</span>
+                <br>
+                <div class="i-icons-con">
+                    <div class="s-icon">P</div>
+                    <div class="s-icon">P</div>
+                    <div class="s-icon"></div>
+                    <div class="s-icon"></div>
+                    <div class="s-icon"></div>
+                </div>
+            </div>
+            <div class="i-dir">
+                <span>Dir:</span>
+                <br>
+                <span></span>
+            </div>
+            <div class="i-start"><span>Start</span></div>
+            <div class="i-delete">D</div>
+            <div class="i-reset">R</div>
         </div>
-        <div>
-            <span></span>
-            <span></span>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
     </dialog>
-    <dialog id="menu-container" class="popup-container" onclick="closePopup(this)">
+    <dialog id="menu-container" class="popup-container" onclick="this.close()">
         <div class="menu">
             <span onclick="openDashboard()">Dashboard</span>
             <span onclick="openServers()">Servers</span>
@@ -38,7 +49,7 @@
             <h1 class="title">Block Valley - Manager</h1>
             <h1>Dashboard</h1>
         </div>
-        <div class="close-button" onclick="window.close();"></div>
+        <div class="close-button" onclick="window.close()"></div>
     </header>
     <main>
         <div class="dashboard">
