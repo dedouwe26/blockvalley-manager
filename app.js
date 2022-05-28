@@ -34,7 +34,7 @@ app.whenReady().then(() => {
     fs.readFile("./config.json","utf-8",(err,data)=>{
       if (err) {
         if (err.code==='ENOENT') {
-          fs.writeFile("./config.json",'{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}',()=>{});
+          fs.writeFile("./config.json",'{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,4,3],"eula":true}]}',()=>{});
           data='{"sowner":"","sdir":"./servers","latest":0,"servers":[{"name":"name","dir":"./servers","owner":"owner","custom":[0,5,3],"eula":true}]}';
         }
       }
